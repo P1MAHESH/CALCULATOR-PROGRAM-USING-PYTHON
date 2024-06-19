@@ -20,29 +20,37 @@ def operators():
         print(f"Invalid choice of operator {operator} and please type \"no\" for the next question to avoid wrong answers ".upper())
 def continued():
     global answer
-    number_3=int(input("Enter the number : "))
-    operator=input("Select the operator + \n - \n * \n % \n your choice : ")
-    if operator=='+':
-        Answer=answer
-        answer+=number_3
-        print(f"Sum of {Answer} and {number_3} is {answer}")
-    elif operator=='-':
-        Answer=answer
-        answer-=number_3
-        print(f"difference of {Answer} and {number_3} is {answer}")
-    elif operator=='*':
-        Answer=answer
-        answer*=number_3
-        print(f"Product of {Answer} and {number_3} is {answer}")
-    elif operator=='/':
-        if number_3==0:
-            print("any number cannot divided by zero. ".upper())
-        else:
+    while True:
+        number_3=int(input("Enter the number : "))
+        operator=input("Select the operator + \n - \n * \n % \n your choice : ")
+        if operator=='+':
             Answer=answer
-            answer/=number_3
-            print(f"quotient of {Answer} and {number_3} is {answer}")
-    else:
-        print(f"Invalid choice of operator {operator} and please type \"no\" for the next question to avoid wrong answers ".upper())
+            answer+=number_3
+            print(f"Sum of {Answer} and {number_3} is {answer}")
+        elif operator=='-':
+            Answer=answer
+            answer-=number_3
+            print(f"difference of {Answer} and {number_3} is {answer}")
+        elif operator=='*':
+            Answer=answer
+            answer*=number_3
+            print(f"Product of {Answer} and {number_3} is {answer}")
+        elif operator=='/':
+            if number_3==0:
+                print("any number cannot divided by zero. ".upper())
+            else:
+                Answer=answer
+                answer/=number_3
+                print(f"quotient of {Answer} and {number_3} is {answer}")
+        else:
+            print(f"Invalid choice of operator {operator} and please type \"no\" for the next question to avoid wrong answers ".upper())
+        continue_choice = input("Do you want to continue the present calculation? Type 'yes' to continue or 'no' to stop: ").lower()
+        while continue_choice=='yes':
+            continued()
+        while continue_choice=='no':
+            print("the calculation is as above ")
+            break
+        break
 number_1=int(input("Enter the first number : "))
 operator=input("Select the operator + \n - \n * \n / \n your choice : ")
 number_2=int(input("Enter the second number : "))
@@ -53,3 +61,5 @@ if continues=='yes':
 elif continues=='no':
     c="The present calculation is as above"
     print(c)
+else:
+    print("invalid for continues")
