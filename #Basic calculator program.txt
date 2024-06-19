@@ -1,0 +1,55 @@
+#Basic calculator program
+def operators():
+    global answer
+    if operator=='+':
+        answer=number_1+number_2
+        print(f"Sum of {number_1} and {number_2} is {answer}")
+    elif operator=='-':
+        answer=number_1-number_2
+        print(f"difference of {number_1} and {number_2} is {answer}")
+    elif operator=='*':
+        answer=number_1*number_2
+        print(f"Product of {number_1} and {number_2} is {answer}")
+    elif operator=='/':
+        if number_2==0:
+            print("any number cannot be divided by zero ")
+        else:
+            answer=number_1/number_2
+            print(f"quotient of {number_1} and {number_2} is {answer}")
+    else:
+        print(f"Invalid choice of operator {operator} and please type \"no\" for the next question to avoid wrong answers ".upper())
+def continued():
+    global answer
+    number_3=int(input("Enter the number : "))
+    operator=input("Select the operator + \n - \n * \n % \n your choice : ")
+    if operator=='+':
+        Answer=answer
+        answer+=number_3
+        print(f"Sum of {Answer} and {number_3} is {answer}")
+    elif operator=='-':
+        Answer=answer
+        answer-=number_3
+        print(f"difference of {Answer} and {number_3} is {answer}")
+    elif operator=='*':
+        Answer=answer
+        answer*=number_3
+        print(f"Product of {Answer} and {number_3} is {answer}")
+    elif operator=='/':
+        if number_3==0:
+            print("any number cannot divided by zero. ".upper())
+        else:
+            Answer=answer
+            answer/=number_3
+            print(f"quotient of {Answer} and {number_3} is {answer}")
+    else:
+        print(f"Invalid choice of operator {operator} and please type \"no\" for the next question to avoid wrong answers ".upper())
+number_1=int(input("Enter the first number : "))
+operator=input("Select the operator + \n - \n * \n / \n your choice : ")
+number_2=int(input("Enter the second number : "))
+operators()
+continues=input("\n\nDo u want to continues the present calculation or do new calculation, \n\nto continue the present calculation type 'yes' then your answer will be operated to your provided input in the next step \n\n and for new calcution type 'no'").lower()
+if continues=='yes':
+    continued()
+elif continues=='no':
+    c="The present calculation is as above"
+    print(c)
