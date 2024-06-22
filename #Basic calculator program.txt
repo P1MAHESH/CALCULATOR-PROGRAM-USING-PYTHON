@@ -1,5 +1,5 @@
 #Basic calculator program
-def operators():
+def operators(number_1,number_2):
     global answer
     if operator=='+':
         answer=number_1+number_2
@@ -18,48 +18,21 @@ def operators():
             print(f"quotient of {number_1} and {number_2} is {answer}")
     else:
         print(f"Invalid choice of operator {operator} and please type \"no\" for the next question to avoid wrong answers ".upper())
-def continued():
-    global answer
-    while True:
-        number_3=int(input("Enter the number : "))
-        operator=input("Select the operator + \n - \n * \n % \n your choice : ")
-        if operator=='+':
-            Answer=answer
-            answer+=number_3
-            print(f"Sum of {Answer} and {number_3} is {answer}")
-        elif operator=='-':
-            Answer=answer
-            answer-=number_3
-            print(f"difference of {Answer} and {number_3} is {answer}")
-        elif operator=='*':
-            Answer=answer
-            answer*=number_3
-            print(f"Product of {Answer} and {number_3} is {answer}")
-        elif operator=='/':
-            if number_3==0:
-                print("any number cannot divided by zero. ".upper())
-            else:
-                Answer=answer
-                answer/=number_3
-                print(f"quotient of {Answer} and {number_3} is {answer}")
-        else:
-            print(f"Invalid choice of operator {operator} and please type \"no\" for the next question to avoid wrong answers ".upper())
-        continue_choice = input("Do you want to continue the present calculation? Type 'yes' to continue or 'no' to stop: ").lower()
-        while continue_choice=='yes':
-            continued()
-        while continue_choice=='no':
-            print("the calculation is as above ")
-            break
-        break
-number_1=int(input("Enter the first number : "))
+numbe2=int(input("Enter the first number : "))
 operator=input("Select the operator + \n - \n * \n / \n your choice : ")
-number_2=int(input("Enter the second number : "))
-operators()
+numbe_2=int(input("Enter the second number : "))
+operators(numbe2,numbe_2)
 continues=input("\n\nDo u want to continues the present calculation or do new calculation, \n\nto continue the present calculation type 'yes' then your answer will be operated to your provided input in the next step \n\n and for new calcution type 'no'").lower()
-if continues=='yes':
-    continued()
-elif continues=='no':
+while continues=='yes':
+    operator=input("Select the operators \n + \n -\n / \n *")
+    number_3=int(input("Enter the number"))
+    operators(answer,number_3)
+    continues=input("\n\nDo u want to continues the present calculation or do new calculation, \n\nto continue the present calculation type 'yes' then your answer will be operated to your provided input in the next step \n\n and for new calcution type 'no'").lower()
+    break
+while continues=='no':
     c="The present calculation is as above"
     print(c)
-else:
+    break
+while continues!='yes' and continues!='no':
     print("invalid for continues")
+    break
